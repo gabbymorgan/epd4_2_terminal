@@ -1,0 +1,12 @@
+[Unit]
+Description=epterm e-paper keyboard terminal
+After=network.target
+
+[Service]
+ExecStart=%h/bin/epterm --shell --grab
+ExecStopPost=%h/bin/epterm --clear-only
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
